@@ -1,18 +1,27 @@
+import CalculatorButton from '@/components/CalculatorButton';
 import ThemeText from '@/components/ThemeText';
 import { globalStyles } from '@/styles/global-styles';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 const CalculatorApp = () => {
     return (
         <View style={globalStyles.calculatorContainer}>
-            <Text style={globalStyles.mainResult}>
-                50x50000000000000
-            </Text>
-            <Text style={globalStyles.subResult}>250</Text>
+            {/*Resultados*/}
+            <View style={{ paddingHorizontal: 30, marginBottom: 20 }}>
+                <ThemeText variant='h1'>50 x 50</ThemeText>
+                <ThemeText variant='h1'>250</ThemeText>
+            </View>
 
-            <ThemeText propiedad1='ejemplo de texto para la propiedad 1' numberOfLines={1}>Mi textoefi textoefjshfujdfdskjfdslkfjskdjfdsmi textoefjshfujdfdskjfdslkfjskdjfdsmi textoefjshfujdfdskjfdslkfjskdjfdsmi textoefjshfujdfdskjfdslkfjskdjfdsmi textoefjshfujdfdskjfdslkfjskdjfdsmi textoefjshfujdfdskjfdslkfjskdjfdsmi textoefjshfujdfdskjfdslkfjskdjfdsmi textoefjshfujdfdskjfdslkfjskdjfdsmi textoefjshfujdfdskjfdslkfjskdjfdsmi textoefjshfujdfdskjfdslkfjskdjfdsmi textoefjshfujdfdskjfdslkfjskdjfdsmi textoefjshfujdfdskjfdslkfjskdjfdsmi textoefjshfujdfdskjfdslkfjskdjfdsmjshfujdfdskjfdslkfjskdjfdsmf</ThemeText>
-            <ThemeText propiedad1='ejemplo de texto para la propiedad 1' numberOfLines={1}>{12}</ThemeText>
+
+            {/* Filas de botones */}
+            <View style={globalStyles.row}>
+                <CalculatorButton label='C'></CalculatorButton>
+                <CalculatorButton label='+/-'></CalculatorButton>
+                <CalculatorButton label='del'></CalculatorButton>
+                <CalculatorButton label='÷'></CalculatorButton>
+            </View>
+
         </View>
     )
 }
