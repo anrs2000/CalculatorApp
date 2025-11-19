@@ -129,6 +129,8 @@ export const useCalculator = () => {
 
     const buildNumber = (numberString: string) => {
 
+        let valor = '';
+
         //Verificar si ya existe el punto decimal
         if (number.includes('.') && numberString === '.') return;
 
@@ -143,13 +145,17 @@ export const useCalculator = () => {
             }
         };
 
+        //Verificar si se pulsa el '.' sin haber ninguna cifra previa
+        if (number.length === 0 && numberString === '.') {
+            return setNumber("0.");
+        }
+
         setNumber(number + numberString);
     }
 
     return {
         //Props
         formula,
-        number,
         prevNumber,
 
         //Métodos
@@ -163,12 +169,6 @@ export const useCalculator = () => {
         addOperation,
         substractOperation,
 
-        calculateSubResult,
         calculateResult,
-
-        //////////ELIMINAR ↓↓↓
-        lastOperation,
-        //////////ELIMINAR ↑↑↑
     };
-    // } as const;
 }

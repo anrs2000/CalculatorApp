@@ -10,17 +10,13 @@ const CalculatorApp = () => {
 
     const {
         //Variables
-        formula, number, prevNumber,
+        formula, prevNumber,
 
         //Métodos
         buildNumber, clean, toggleSign, deleteLast,
         divideOperation, multiplyOperation, addOperation, substractOperation,
 
-        calculateSubResult, calculateResult,
-
-        //////////ELIMINAR ↓↓↓
-        lastOperation,
-        //////////ELIMINAR ↑↑↑
+        calculateResult,
 
     } = useCalculator();
 
@@ -32,15 +28,9 @@ const CalculatorApp = () => {
                 {(formula === prevNumber && formula === '0') ? (
                     <ThemeText variant='h2'></ThemeText>
                 ) : (
-                    <ThemeText variant='h2'>PREVNUMBER: {prevNumber}</ThemeText>
-                    // <ThemeText variant='h2'>{prevNumber}</ThemeText>
+                    <ThemeText variant='h2'>{prevNumber}</ThemeText>
 
                 )}
-
-                <ThemeText variant='h2'>FORMULA = {formula}</ThemeText>
-                {/* <ThemeText variant='h2'>PREVNUMBER = {prevNumber}</ThemeText> */}
-                <ThemeText variant='h2'>NUMBER = {number}</ThemeText>
-                <ThemeText variant='h2'>LASTOPERATION = {lastOperation.current}</ThemeText>
             </View>
 
             {/* Fila 1 de botones */}
