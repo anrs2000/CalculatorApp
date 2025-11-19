@@ -15,8 +15,8 @@ const ThemeText = ({ children, variant, ...textProps }: Props) => {
         variant === 'h1' && globalStyles.mainResult,
         variant === 'h2' && globalStyles.subResult,
         ]}
-        numberOfLines={1}
-        adjustsFontSizeToFit
+            numberOfLines={1}
+            adjustsFontSizeToFit
             {...textProps}>
             {children}
         </Text >

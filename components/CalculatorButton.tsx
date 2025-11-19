@@ -20,7 +20,6 @@ const CalculatorButton = ({ label,
     doubleSized = false,
 }: Props) => {
     return (
-        // <Pressable style={[globalStyles.button, { backgroundColor: color }]}
         <Pressable style={({ pressed }) => ({
             ...globalStyles.button,
             backgroundColor: color,
@@ -28,10 +27,8 @@ const CalculatorButton = ({ label,
             width: doubleSized ? 190 : 80,
         })}
             onPress={() => {
-                // async () => {
-                //TODO: haptics
-                Haptics.selectionAsync();
 
+                Haptics.selectionAsync();
                 onPress();
             }
             }
